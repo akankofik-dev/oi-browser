@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "oi-browser"
+version = "1.0.1"
+description = "Browser automation backend for Oi: CDP-driven Chrome, record/replay, MCP server and skill generation."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12"
+authors = [{ name = "oi-browser contributors" }]
+keywords = ["browser", "automation", "cdp", "chrome", "playwright", "oi", "mcp"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Testing",
+  "Topic :: Utilities",
+]
+dependencies = [
+  "aiohttp>=3.9",
+  "mcp>=1.9,<2",
+  "pydantic>=2.0",
+  "websockets>=12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "coverage[toml]>=7.5",
+  "mypy>=1.9",
+  "pre-commit>=3.7",
+  "pytest>=8.0",
+  "pytest-asyncio>=0.23",
+  "pytest-cov>=5.0",
+  "ruff>=0.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/akankofik-dev/oi-browser"
+Source = "https://github.com/akankofik-dev/oi-browser"
+Issues = "https://github.com/akankofik-dev/oi-browser/issues"
+
+[project.scripts]
+oi-browser = "oi_browser.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["oi_browser"]
+
+[tool.hatch.build.targets.sdist]
+include = ["oi_browser", "README.md", "LICENSE"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
