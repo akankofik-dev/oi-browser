@@ -223,6 +223,7 @@ def sanitize_chinese_search(profile_dir: Path) -> bool:
     # Pola domain China yang harus dibersihkan
     cn_patterns = [
         r"tencent\.com",
+        r"myqcloud\.com",  # Tencent Cloud COS
         r"qq\.com",
         r"baidu\.com",
         r"sogou\.com",
