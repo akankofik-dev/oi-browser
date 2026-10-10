@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "oi-browser"
-version = "1.0.1"
+version = "1.0.2"
 description = "Browser automation backend for Oi: CDP-driven Chrome, record/replay, MCP server and skill generation."
 readme = "README.md"
 license = { file = "LICENSE" }
